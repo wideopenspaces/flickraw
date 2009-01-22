@@ -26,7 +26,7 @@ require 'json'
 require 'cgi'
 
 module FlickRaw
-  VERSION='0.5.1'
+  VERSION='0.5.2'
 
   FLICKR_HOST='api.flickr.com'.freeze
 

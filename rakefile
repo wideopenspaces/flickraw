@@ -8,20 +8,17 @@ require 'flickraw_rdoc'
 
 begin
   require 'jeweler'
+  acct = "wideopenspaces"
+  name = "flickraw"
   Jeweler::Tasks.new do |s|
+    s.name = name
     s.summary = "Flickr library with a syntax close to the syntax described on http://www.flickr.com/services/api"
-    s.name = "flickraw"
+    s.email =  "jake@wideopenspac.es"
+    s.homepage = "http://github.com/#{acct}/#{name}"
+    s.description = "Flickr library with a syntax close to the syntax described on http://www.flickr.com/services/api"
     s.authors = ["Mael Clerambault", "Jacob Stetser"]
-    s.email =  "maelclerambault@yahoo.fr"
-    s.homepage = "http://github.com/wideopenspaces/flickry"
-    s.rubyforge_project = "flickraw"
     s.add_dependency 'json'
   end
 rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
-end
-
-Rake::RDocTask.new do |rd|
-  rd.rdoc_files.include "README", "lib/flickraw.rb"
-  rd.options << "--inline-source"
 end
