@@ -60,7 +60,12 @@ module FlickRaw
         if name =~ /s$/ and obj[$`].is_a? Array
           list = structify obj.delete($`)
           list.extend SimpleOStruct
-          list.instance_eval { obj.each {|kv, vv| __attr_define kv, vv } }
+          list.instance_eval { obj.each {|kv, vv| 
+            __attr_define kv, vv 
+            if kv == "id"
+              __attr_define "fid", vv
+            end
+          } }
           list
         elsif obj.keys == ['_content']
           obj['_content'].to_s
